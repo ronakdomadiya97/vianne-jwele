@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
+module.exports = nextConfig
 const nextConfig = {
   reactStrictMode: true,
-  image: {
-    domains: ['https://example.com'],
-},
+  // module.exports = { images: { domains: ['api.viannejewels.com/'], formats: ['image/avif', 'image/webp'], }, }
+
+
+  
 };
 
-export default nextConfig;
+export default nextConfig
