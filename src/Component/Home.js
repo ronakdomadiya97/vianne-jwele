@@ -533,7 +533,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
                                 <div style={{ height: 400, position: 'relative', width: 'auto' }}>
                                   <Image
                                   className="new-product-main-img"
-                                    src='/prod?.product_feature_image'
+                                    src={/prod?.product_feature_image}
                                     alt="Description of image"
                                     layout="fill"
                                     objectFit="contain"
