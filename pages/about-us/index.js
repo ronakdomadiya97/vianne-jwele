@@ -1,6 +1,8 @@
 import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 import React from "react";
+import Image from 'next/image'
+
 
 const About = () => {
     return (
@@ -29,10 +31,11 @@ const About = () => {
                                 </div>
                             </div>
                             <div className="col-lg-6 position-0 mt-5">
-                                <img style={{ objectFit: 'cover' }} src={"/img/img/creft.jpg"} height={400} alt="img" />
+                                {/* <img style={{ objectFit: 'cover' }} src={"/img/img/creft.jpg"} height={400} alt="img" /> */}
+                                <Image style={{ objectFit: 'contain' }} src={"/img/img/creft.jpg"} fill={true}  alt="img" sizes="(max-width: 768px) 50vw, 30vw" />
                             </div>
                             <div className="col-lg-4 position-2 mt-lg-0 mt-3">
-                                <img style={{ objectFit: 'cover' }} src={"img/designs.jpg"} height={315} alt="img" />
+                                <img style={{ objectFit: 'cover' }} src={"img/designs.jpg"} height={315} alt="img"  />
                             </div>
                             <div className="col-lg-8 mt-lg-5 mt-3 position-5">
                                 <div className="left-descrption">

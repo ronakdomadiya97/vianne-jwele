@@ -435,7 +435,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
     <>
       {BannerList?.length > 0 && <div className="home-banner">
         <Slider {...bannersSlider} className="m-0 p-0 home-banner-slider">
-          {BannerList?.map((item,i) => {
+          {BannerList?.map((item, i) => {
             return (
               <div key={i} className="row position-relative pe-0 ps-0" style={{ backgroundColor: "#07362e" }}>
                 <div className="position-relative pe-0 ps-0">
@@ -523,7 +523,22 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
                           <div className='main_product_image__box shop-product_page-box position-relative'>
                             <Link href={`/shop-detail/${prod?.product_id}`}>
                               <div>
-                                <img className="new-product-main-img" src={prod?.product_feature_image} alt="img" loading="lazy" />
+                                {/* <img className="new-product-main-img" src={prod?.product_feature_image} alt="img" loading="lazy" /> */}
+                                {/* <Image
+                                  fill
+                                  alt="img"
+                                  src={prod?.product_feature_image}
+                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                /> */}
+                                <div style={{ height: 400, position: 'relative', width: 'auto' }}>
+                                  <Image
+                                  className="new-product-main-img"
+                                    src='/prod?.product_feature_image'
+                                    alt="Description of image"
+                                    layout="fill"
+                                    objectFit="contain"
+                                  />
+                                </div>
                               </div>
                             </Link>
                             <button className="new-btn">New</button>
@@ -586,7 +601,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
                   <div className="d-lg-flex d-block">
                     <div className="width-50">
                       <Slider {...reviewSlider} className="quick-view-slider" >
-                        {selectQuickView?.product_gallery_images?.length > 0 && selectQuickView?.product_gallery_images?.map((d,i) => {
+                        {selectQuickView?.product_gallery_images?.length > 0 && selectQuickView?.product_gallery_images?.map((d, i) => {
                           return (
                             <img key={i} src={d} alt="img" className="quickview-image" loading="lazy" />
                           )
@@ -647,7 +662,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
                           </tr>
                           <tr>
                             <td><p className="title-left">Title</p></td>
-                            {productName?.map((data,i) => {
+                            {productName?.map((data, i) => {
                               return (
                                 <td key={i}><p className="compare-content">{data}</p></td>
                               )
@@ -655,7 +670,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
                           </tr>
                           <tr>
                             <td><p className="title-left">Price</p></td>
-                            {priceList?.map((data,i) => {
+                            {priceList?.map((data, i) => {
                               return (
                                 <td key={i}><p className="compare-value">₹ {data ? parseInt(data)?.toLocaleString('en-IN') : 0}</p></td>
                               )
@@ -664,7 +679,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
                           </tr>
                           <tr>
                             <td><p className="title-left">Description</p></td>
-                            {compareListData?.map((data,i) => {
+                            {compareListData?.map((data, i) => {
                               return (
                                 <td key={i}><p className="compare-value">{data?.product_short_description}</p></td>
                               )
@@ -672,7 +687,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
                           </tr>
                           <tr>
                             <td><p className="title-left">Available</p></td>
-                            {compareListData?.map((data,i) => {
+                            {compareListData?.map((data, i) => {
                               return (
                                 <td key={i}><p className="compare-value">Yes</p></td>
                               )
@@ -766,7 +781,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
               {...{ ...bannerSlider, initialSlide: 2 }}
               className="categories-slider m-0 p-0 row"
             >
-              {categoryList?.map((item,i) => {
+              {categoryList?.map((item, i) => {
                 return (
                   <li className="col-md-4 position-relative explore-row-data home-explore" key={i}>
                     <img
@@ -997,7 +1012,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
               {...reviewSlider}
               className="m-0 p-0 collecion-slider customer-slider"
             >
-              {Reviewlist?.map((item,i) => {
+              {Reviewlist?.map((item, i) => {
                 return (
                   <div className="col-10" key={i}>
                     <div className="scot-img">
@@ -1055,7 +1070,7 @@ const HomePage = ({ setIsSelectedProd, isSelectedProd }) => {
         <div className="container">
           <div className="blog-row">
             <div className="row">
-              {postList?.slice(0, 3)?.map((pos,i) => {
+              {postList?.slice(0, 3)?.map((pos, i) => {
                 return (
                   <div className="col-md-4 mt-0 pt-4" key={i}>
                     <div className="blog-data-box text-start">
